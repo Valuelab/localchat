@@ -1,103 +1,103 @@
-
     "neighbourhoods": {
         "neighbourhoodId": {
             "name": "Shenkin",
         }
     },
-    "groups": {
-        "public": {
-            "neighbourhoodId": {
-                "groupId": {
-                    "neighbourhood": "neighbourhoodId"
-                    "name": "Vegans"
-                    "description": "Only Vegans!",
-                    "created": "<date>",
-                    "hue": "230",
-                    "notificationThreshold": 10,
-                    "criticalMass": 20,
-                    "appeal": 0.3
-                    "lastMessage": "David: 'Whatup'"
-                    "lastMessageDate": "<date>",
-                    "lastActiveMemberThumbnails": {
-                        "userId": true
-                    }
-                    "admins": {
-                        "userId": true,
-                    },
-                    "members": {
-                        "userId": true,  
-                    }
-                    "blacklist": {
-                        "userId": true,
-                    }
-                    
-                }
-            }
-        },
-        "inModeration": {
-            "neighbourhoodId": {
-                "groupId": {
-                    "neighbourhood": "neighbourhoodId",
-                    "name": "Vegans",
-                    "description": "Only Vegans!",
-                    "created": "<date>",
-                    "hue": "230",
-                    "admins": {
-                        "userId": true,
-                    },
-                }
-            }
-        }
-        "private": {
+    "discovery":{
+        "neighbourhoodId": {
             "groupId": {
-                "lastMessage": "Eytan: I don't speak broke nigga",
-                "lastMessageDate": "<date>"
-                "members": {
-                    "userId": true
+                "rank": 12,
+                "name": "Vegans",
+                "description": "Only vegans",
+                "hue": 200,
+                "previewMessage": {
+                    "authorName": "Eytan",
+                    "text": "I don't speak broke nigga"
                 }
             }
         }
+    }
+    "groups": {     
+        "groupId": {
+            "neighbourhood": "neighbourhoodId"
+            "name": "Vegans"
+            "description": "Only Vegans!",
+            "created": "<date>",
+            "hue": "230",
+            "notificationThreshold": 10,
+            "criticalMass": 20,
+            "admins": {
+                "userId": true,
+            },
+            "members": {
+                "userId": true,  
+            }
+            "blacklist": {
+                "userId": true,
+            } 
+        }  
     }
     "users": {
         "userId": {
             "name": "Eytan",
-            "neighbourhood": "neighbourhoodId",
+            "neighbourhood": "Shenkin",
+            "neighbourhoodId": "neighbourhoodId",
             "street": "Korazim",
+            "fbUserId": "id"
         }
     }
     "memberships": {
         "userId": {
-            "public": {
+            "groups": {
                 "groupId": {
                     "name": "Vegans",
-                    "hue": "230"
+                    "description": "Only vegans",
+                    "hue": 230
                 }
-            },
-            "private": {
-                "groupId": {
-                    "counterparty": "userId"
-                    "title": "Eytan, Shenkin"
-                    "hue": "230",
+            }
+            "directs": {
+                "directId": {
+                    "title": "Eytan, Korazim"
+                    "hue": 200
                     "counterparty": "userId"
                 }
-            } 
+            }
         }  
     }
     "messages": {
-        "groupId": {
-            "messageId": {
-                "group": "groupId"
-                "type": 0, // Text, Photos, System
-                "authorId": "userId",
-                "status": 0 // Displayed, Admin Removed
-                "text": "Hello!", 
-                "image": "<data>",
-                "likes": 0
-            }
+        "groups": {
+            "groupId": {
+                "messageId": {
+                    "type": 0, // Text, Photos, System
+                    "authorId": "userId",
+                    "authorName": "David"
+                    "authorStreet": "Melchett"
+                    "data": "<data>",
+                    "created": "<date>"
+                    "exclamations": 0,
+                    "notificationSent": false,
+                    "status": 0 // none, admin delete, user delete
+                }
+            } 
+        } 
+        "direct": {
+           "directId": {
+                "messageId": {
+                    "type": 0, // Text, Photos, System
+                    "authorId": "userId",
+                    "authorName": "David"
+                    "authorStreet": "Melchett"
+                    "data": "<data>",
+                    "created": "<date>"
+                    "exclamations": 0
+                    "status": 0 // none, admin delete, user delete
+                    "notificationSent": false,
+                }
+            } 
         }
     }
     "globals": {
-        "criticalMass": 20
+        "defaultCriticalMass": 20
         "blacklist": {
             "fbUserId": true
         }
