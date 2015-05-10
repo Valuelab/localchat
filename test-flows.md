@@ -2,31 +2,28 @@
 
 ## Core Actions
 
-* Sign Up 
-* See Groups, Paged, Sorted
-* Join/Leave Group
-* Load Group
-	* ✓Before Critical Mass
-	* ✓After Critical Mass
-* Write a Message
-	* Photo
-	* Video
-* Like a Message
-* See User Profile
-* View Directs (Paged, Sorted)
-* Start a Direct
-	* Load Messages if Exists
-	* Send Message
-* Delete a Message
-
+* ✓Sign Up 
+* ✓See Groups (Paged, Sorted)
+* Join and Leave Group
+	* Banned User
+* ✓Load Group
+	* Before Critical Mass
+	* After Critical Mass
+* ✓Write a Group Message
+	* Media Types
+	* Banned User
+* ✓Like a Message
+* ✓See User Profile
+* ✓Load DMs If Exist
+* ✓View Directs (Paged, Sorted)
+* ✓Send DM
+* ✓Delete a Message
 
 ## Push Notifications
 
-* One on One Message
-* When Critical Mass is Achieved
-* Threshhold message
-
-## Security
+* ✓One on One Message
+* ✓When Critical Mass is Achieved
+* ✓Threshhold message
 
 ## Admin
 
@@ -45,6 +42,8 @@
 * View/Set Group Appeal
 * Create New Hood
 * Ban User
+
+## Security
 
 ## More
 
