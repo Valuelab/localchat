@@ -1,3 +1,4 @@
+    
     "neighbourhoods": {
         "neighbourhoodId": {
             "name": "Shenkin",
@@ -24,6 +25,7 @@
             "description": "Only Vegans!",
             "created": "<date>",
             "hue": "230",
+            "inReview": false,
             "notificationThreshold": 10,
             "criticalMass": 20,
             "admins": {
@@ -60,6 +62,10 @@
                     "title": "Eytan, Korazim"
                     "hue": 200
                     "counterparty": "userId"
+                    "lastMessageDate": "<date>"
+                    "lastMessage": {
+
+                    }
                 }
             }
         }  
@@ -73,7 +79,7 @@
                     "authorName": "David"
                     "authorStreet": "Melchett"
                     "data": "<data>",
-                    "created": "<date>"
+                    "created": "<date>",
                     "exclamations": 0,
                     "notificationSent": false,
                     "status": 0 // none, admin delete, user delete
@@ -85,27 +91,27 @@
                 "messageId": {
                     "type": 0, // Text, Photos, System
                     "authorId": "userId",
-                    "authorName": "David"
-                    "authorStreet": "Melchett"
+                    "authorName": "David",
+                    "authorStreet": "Melchett",
                     "data": "<data>",
-                    "created": "<date>"
-                    "exclamations": 0
-                    "status": 0 // none, admin delete, user delete
-                    "notificationSent": false,
+                    "created": "<date>",
+                    "exclamations": 0,
+                    "status": 0, // none, admin delete, user delete
+                    "notificationSent": false
                 }
             } 
         }
     }
-    "globals": {
-        "defaultCriticalMass": 20
-        "blacklist": {
-            "fbUserId": true
+    "system": {
+        "globals": {
+            "defaultCriticalMass": 20
+            "blacklist": {
+                "fbUserId": true
         }
-    }
-    "reports": {
-        "reportId": {
+        "reports": {
+            "reportId": {
             "message": "messageId"
             "group": "groupId"
         }
     }
- }
+}
