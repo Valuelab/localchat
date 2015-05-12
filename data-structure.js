@@ -1,9 +1,10 @@
-// Parse Data
+// Patrick Data
 
 Neighbourhoods
     objectId
     name
     groups (relation)
+    
 
 Groups
     objectId
@@ -24,6 +25,7 @@ Groups
 
 Users
     objectId
+    firebaseToken
     name
     street
     neighbourhoodId
@@ -36,20 +38,31 @@ Log
 
 // Firebase Data
 
-"directs": {
+
+"memberships": {
     "userId": {
-        "directId": {
-            "title": "Eytan, Korazim"
-            "hue": 200
-            "counterparty": "userId"
-            "lastMessageDate": "<date>"
-            "lastMessage": {
+        "groups": {
+            // write: server, read: noone
+            "conversationId": true
+        }
+        "directs": {
+            // write: authed userId,counterparty read: userId 
+            "conversationId": {
+                "title": "Eytan, Korazim"
+                "hue": 200
+                "counterparty": "userId"
+                "lastMessageDate": "<date>"
+                "lastMessage": {
+                }
             }
         }
     }
-},
-"messages": { 
-    "conversationId": { 
+}
+"messages": {
+    // write: authed user, read:noone
+    "conversationId": {   
+        // write & read: userId.groups.conversationId exists OR userId.direct.conversationId exists
+        // validation: user = authorId 
         "messageId": {
             "conversationType": 0, // direct or group
             "dmRecipientId": "id", //userId if direct, otherwise nil
@@ -61,10 +74,10 @@ Log
             "created": "<date>",
             "exclamations": 0,
         }
-    }     
+    }
 }
 
-// Backend listenes to all /messages/conversations
+// Peter listenes to all /messages/conversations
 
 Child Added
     Group: Update Parse Group With Last Message
@@ -77,9 +90,8 @@ Child Removed
 Child Changed
     Group: Send Notification When Threshhold Crossed 
 
+// More Backend Functions
 
-
-
-
-
-
+registerUserWithFirebase
+addUserToFirebaseGroup
+removeUserFromFirebaseGroup
