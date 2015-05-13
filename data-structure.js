@@ -99,21 +99,38 @@ Blacklist
     }
 }
 
-// Peter listenes to all /messages/conversations
+// PARSE CLOUD CODE FUNCTIONS
+
+signUp // TBD, but including firebase
+
+getGroupsForUser(range)
+isSuper
+messageAdded
+    Direct → Notification
+    Group → Update Group.lastMessage
+    Group → Notification Threshold?
+addUserToGroup // including firebase
+removeUserFromGroup // including firebase
+removeMessageByAdmin
+    Log 
+    Update Firebase 
+
+// BACKGROUND JOBS
+
+// FIREBASE LISTENERS
 
 Child Added
-    Group: Update Parse Group With Last Message
-    Direct: Send Notification
+    Notify Parse of Message ()
+        (Group: Update Parse Group With Last Message)
+        (Direct: Send Notification)
 
 Child Removed
     Remove from Last Group Message If Relevant  
     Update Parse Log
 
 Child Changed
-    Group: Send Notification When Threshhold Crossed 
+    Group: Send Notification When Threshhold Crossed         
 
-// More Backend Functions
 
-registerUserWithFirebase
-addUserToFirebaseGroup
-removeUserFromFirebaseGroup
+
+
