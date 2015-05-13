@@ -1,43 +1,65 @@
-// Patrick Data
+// PARSE DATA
+
+// Default CLPs // add fields, delete: superadmin
+// Default ACLs // superadmins can do everything
 
 Neighbourhoods
+    // CLPs // find & get: everyone, else: supers
+    // ACLs // none
     objectId
     name
-    groups (relation)
     
-
 Groups
+    // CLPs // defaults
+    // ACLs // write: admins & supers, read: residentsOfId & supers
     objectId
-    neighbourhood
+    neighbourhoodId
     name
     description
     created
+    rank
     hue
     inReview
-    deleted 
+    deleted // nil, by user, by admin
     criticalMass
     lastMessageDate
     lastMessageText
     notificationThreshhold
-    members (relation)
-    admins (relation)
     blacklist (relation)
+    admins (relation)
 
 Users
+    // CLPs // defaults
+    // ACLs // read: residentsOfId & supers, write: user & supers
     objectId
-    firebaseToken
     name
     street
     neighbourhoodId
-    fbUserId
     groups (relation)
 
+UserData
+    // CLPs // get: user, else: supers
+    // ACLs // read & write: user
+    firebaseToken
+    fbUserId
+    email
+    all fb data?
+
 Log
-    Type
-    Description
+    // CLPs // everything: supers
+    type // report message, report user, admin message delete
+    description
 
-// Firebase Data
+Parse Config
+    defaultCriticalMass
 
+Blacklist
+    objectId
+    userId
+    fbUserId
+    email
+
+// FIREBASE DATA
 
 "memberships": {
     "userId": {

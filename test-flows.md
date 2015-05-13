@@ -3,7 +3,8 @@
 ## Core Actions
 
 * ✓Sign Up 
-* ✓See Groups (Paged, Sorted)
+* Discover Groups (Ranked)
+* See User's Groups (Paged, Sorted)
 * Join and Leave Group
 	* Banned User
 * ✓Load Group
@@ -27,39 +28,40 @@
 
 ## Admin
 
-* Create Room
+* ✓Create Group
+	* In Review / Direct Message / Admin Onboarding
 	* Before Critical Mass
 	* After Critical Mass
-* Edit Room
-* Remove Message
-* Ban User
+* ✓Edit Group
+* ✓Remove Message
+* ✓Ban User
 
 ## Super Admin
 
-* Admin Any Group
-* Total Ban of any User
+* ✓Admin Any Group
+* ✓Total Ban of any User
+* ✓Ban User
 * Switch Neighbourhoods
-* View/Set Group Appeal
-* Create New Hood
-* Ban User
 
 ## Security
 
+* All of the Above
+* Firebase Token
+
 ## More
 
-* Report Message
+* ✓Report Message
 
 ## Possible Future Features
 
-* Create a Meetup
-* Multiple Admins
-* See and Join Groups by Gender/Age
-* Collapsed Messages after 24 hours
-* Seen Messages
-* Admin Seeding Guide (PN based)
-* Ban User
-* Store User Exclamations
-* See Who Exclaimed My Message
+* ✓Admin Seeding Guide (PN based)
+* ✓Create a Meetup
+* ✓Multiple Admins
+* ✓See and Join Groups by Gender/Age
+* ✓Collapsed Messages after 24 hours
+* ✓Seen Messages
+* ✓Store User Exclamations
+* ✓See Who Exclaimed My Message
 
 ## Problems
 
@@ -68,4 +70,8 @@
 
 ## Docs
 
-* directId from two userIds
+* Security
+	* Generally ACLs and CLPs
+		* Exception: logging to our db
+		* Exception: adming remove users
+* Gesture Activates Super Admin Mode
