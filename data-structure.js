@@ -7,7 +7,6 @@
 
 Neighbourhoods
     // CLPs // find & get: everyone, else: supers
-    // ACLs // none
     objectId
     name    
 Groups
@@ -29,7 +28,6 @@ Groups
     admins (relation)
     blacklist (relation)
 Users
-    // CLPs // defaults
     // ACLs // read: residentsOfId & supers, write: user & supers
     objectId
     name
@@ -49,8 +47,6 @@ Log
     // CLPs // everything: none
     type // report message, report user, admin message delete
     description
-Parse Config
-    defaultCriticalMass
 Blacklist
     // CLPs /// everything: none
     objectId
@@ -59,73 +55,60 @@ Blacklist
     email
     reason
     blacklistedBy   
+Parse Config
+    defaultCriticalMass
+    supportEmail
 
 // ***************************
 // ****** FIREBASE DATA ******
 // ***************************
 
-"users": {
-      "$userId": {
-        "groups": {
-            "$conversationId": {
-                "role": 0 // user or admin 
-            }
-        }
-        "directs": {
+users
+    $userId
+        groups
+            $conversationId
+                role // user or admin 
+        directs
             // read if $userId == auth.uid
-            // create if($userId == auth.uid) OR (.counterparty == auth.uid)
+            // create if $userId == auth.uid OR .counterparty == auth.uid
             // validate that .counterparty exists in /users
-            "$conversationId": {
-                "title": "Eytan, Korazim" // update if (.counterparty == auth.uid)
-                "hue": 200 // update if (.counterparty == auth.uid)
-                "counterparty": "userId"
-                "lastMessageDate": "<date>" // update if ($userId == auth.uid) OR (.counterparty == auth.uid)
-                "lastMessage": {
+            $conversationId
+                title: Eytan, Korazim // update if (.counterparty == auth.uid)
+                hue // update if (.counterparty == auth.uid)
+                counterparty: userId
+                lastMessageDate: date // update if ($userId == auth.uid) OR (.counterparty == auth.uid)
+                lastMessage
                     // update if ($userId == auth.uid) OR (.counterparty == auth.uid)
-                    "text": "hello"
-                }
-            }
-        }
-        "blacklisted": false
-    }
-}
-"superadmins": { 
-  "userId": true
-}
-"messages": {
-    "groups": {
-        "$conversationId": {  
+                    text
+        blacklisted // true or false
+        superadmin // true of false
+messages
+    groups
+        $conversationId
             // read if $conversationId exists in /users/auth.id/groups
             // delete if /users/auth.id/groups/$conversationId/role == ADMIN OR if /superadmins/auth.id === true
-            "messageId": {
+            messageId
                 // validate that authorId is auth.id and recipient.id existst in /users 
-                "authorId": "userId",
-                "authorName": "David"
-                "authorStreet": "Melchett"
-                "messageType": 0, // text, photo, system
-                "data": "<data>",
-                "created": "<date>",
-                "exclamations": 5 // update only if $conversationId exists in /users/auth.id/groups
-            }
-        }
-    }
-    "directs": {
-        "$conversationId": { 
+                authorId
+                authorName
+                authorStreet
+                messageType // text, photo, system
+                data
+                created
+                exclamations // update if $conversationId exists in /users/auth.id/groups
+    directs
+        $conversationId
             // create & read if $conversationId exists in /users/auth.id/direct
-            "messageId": {
+            messageId
                 // validate that authorId is auth.id and recipient.id existst in /users
-                "recipientId": "id", 
-                "authorId": "userId",
-                "authorName": "David"
-                "authorStreet": "Melchett"
-                "messageType": 0, // text, photo, system
-                "data": "<data>",
-                "created": "<date>",
-                "exclamations": 0 // update only if $conversationId exists in /users/auth.id/direct
-            }
-        }  
-    }
-}
+                recipientId
+                authorId
+                authorName
+                authorStreet
+                messageType // text, photo, system
+                data
+                created
+                exclamations: // update only if $conversationId exists in /users/auth.id/direct
 
 // ************************
 // ****** CLOUD CODE ******

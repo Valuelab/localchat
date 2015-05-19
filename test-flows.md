@@ -44,11 +44,6 @@
 * Ban User
 * Switch Neighbourhoods
 
-## Security
-
-* All of the Above
-* Firebase Token
-
 ## More
 
 * Report Message
