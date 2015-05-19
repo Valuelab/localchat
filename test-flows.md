@@ -7,9 +7,9 @@
 * See User's Groups (Paged, Sorted)
 * Join and Leave Group
 	* Banned User
-* Load Group
+* Load Groups
 	* Before Critical Mass
-	* After Critical Mass
+	* See Messages
 * Write a Group Message
 	* Media Types
 	* Banned User
@@ -18,13 +18,12 @@
 * Load DMs If Exist
 * View Directs (Paged, Sorted)
 * Send DM
-* Delete a Message
 
 ## Push Notifications
 
 * One on One Message
+* Threshhold Message
 * When Critical Mass is Achieved
-* Threshhold message
 
 ## Admin
 
@@ -39,6 +38,8 @@
 ## Super Admin
 
 * Admin Any Group
+	* Edit group
+    * Remove Messages
 * Total Ban of any User
 * Ban User
 * Switch Neighbourhoods
@@ -57,6 +58,7 @@
 * Admin Seeding Guide (PN based)
 * Create a Meetup
 * Multiple Admins
+* Delete a Message
 * See and Join Groups by Gender/Age
 * Collapsing Messages
 	* After 24 hours
@@ -74,6 +76,12 @@
 
 * Security
 	* Generally ACLs and CLPs
-		* Exception: logging to our db
-		* Exception: adming remove users
-* Gesture Activates Super Admin Mode
+	* Exception: logging to our db
+	* Exception: adming remove users
+    * Clients listen to firebase /users/$userId/blacklisted. Log out and wipe local cache if true.
+* Superadmins
+	* Our flows here are all manual for now
+    * Firebase has a manually edited list of superadmin userId's
+    * Parse has a manually editted role list of superadmin userId's
+    * Because Superadmins can hang out in any neighbourhood, we manually set read: all on their User object
+    * Gesture in app activates super admin mode
