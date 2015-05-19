@@ -2,45 +2,45 @@
 
 ## Core Actions
 
-* ✓Sign Up 
+* Sign Up 
 * Discover Groups (Ranked)
 * See User's Groups (Paged, Sorted)
 * Join and Leave Group
 	* Banned User
-* ✓Load Group
+* Load Group
 	* Before Critical Mass
 	* After Critical Mass
-* ✓Write a Group Message
+* Write a Group Message
 	* Media Types
 	* Banned User
-* ✓Like a Message
-* ✓See User Profile
-* ✓Load DMs If Exist
-* ✓View Directs (Paged, Sorted)
-* ✓Send DM
-* ✓Delete a Message
+* Like a Message
+* See User Profile
+* Load DMs If Exist
+* View Directs (Paged, Sorted)
+* Send DM
+* Delete a Message
 
 ## Push Notifications
 
-* ✓One on One Message
-* ✓When Critical Mass is Achieved
-* ✓Threshhold message
+* One on One Message
+* When Critical Mass is Achieved
+* Threshhold message
 
 ## Admin
 
-* ✓Create Group
+* Create Group
 	* In Review / Direct Message / Admin Onboarding
 	* Before Critical Mass
 	* After Critical Mass
-* ✓Edit Group
-* ✓Remove Message
-* ✓Ban User
+* Edit Group
+* Remove Message
+* Ban User
 
 ## Super Admin
 
-* ✓Admin Any Group
-* ✓Total Ban of any User
-* ✓Ban User
+* Admin Any Group
+* Total Ban of any User
+* Ban User
 * Switch Neighbourhoods
 
 ## Security
@@ -50,18 +50,20 @@
 
 ## More
 
-* ✓Report Message
+* Report Message
 
 ## Possible Future Features
 
-* ✓Admin Seeding Guide (PN based)
-* ✓Create a Meetup
-* ✓Multiple Admins
-* ✓See and Join Groups by Gender/Age
-* ✓Collapsed Messages after 24 hours
-* ✓Seen Messages
-* ✓Store User Exclamations
-* ✓See Who Exclaimed My Message
+* Admin Seeding Guide (PN based)
+* Create a Meetup
+* Multiple Admins
+* See and Join Groups by Gender/Age
+* Collapsing Messages
+	* After 24 hours
+	* Depending on Volume
+* Seen Messages
+* Store User Exclamations
+* See Who Exclaimed My Message
 
 ## Problems
 
