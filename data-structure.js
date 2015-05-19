@@ -9,8 +9,7 @@ Neighbourhoods
     // CLPs // find & get: everyone, else: supers
     // ACLs // none
     objectId
-    name
-    
+    name    
 Groups
     // CLPs // defaults
     // ACLs // write: admins & supers, read: residentsOfId & supers
@@ -29,7 +28,6 @@ Groups
     members (relation)
     admins (relation)
     blacklist (relation)
-
 Users
     // CLPs // defaults
     // ACLs // read: residentsOfId & supers, write: user & supers
@@ -38,7 +36,6 @@ Users
     profilePhoto
     street
     neighbourhoodId
-
 UserData
     // CLPs // get: user, else: supers
     // ACLs // read & write: user
@@ -48,15 +45,12 @@ UserData
     gender
     birthday
     // other fb data?
-
 Log
     // CLPs // everything: none
     type // report message, report user, admin message delete
     description
-
 Parse Config
     defaultCriticalMass
-
 Blacklist
     // CLPs /// everything: none
     objectId
@@ -137,13 +131,12 @@ Blacklist
 // ****** CLOUD CODE ******
 // ************************
 
-signUp // TBD, but including firebase
+signUp
     check blacklist for fbtoken
-    get name, profile photo from facebook
-    
+    get name, profile photo from facebook 
     save profile photo in a $userid-suffix format
-    save profile photo filename in the users.$userid.profilePhoto
-
+    save profile photo filename in the users.$userid
+    create firebase user
 getGroupsForUser(range)
 getGroup
     // TBD after cache architecture is determined
@@ -176,13 +169,13 @@ banUser(group)
 
 // FIREBASE LISTENER HOOKS
 
-directMessageAdded($receipientId, $authorId, $messageData)
+directMessageAdded($receipientId, $authorId, $message)
     send notification to user: $recipientId  
-groupMessageAdded($groupId, $authorId, $messageData)
+groupMessageAdded($groupId, $authorId, $message)
     update $groupId.previewMessage
     if $messageData.exclamations >= $groupId.notificationThreshold
         send notification to members of $groupId
-groupMessageRemovedbyAdmin($groupId, $adminId, $removedMessageData, $lastMessageInGroupData)
+groupMessageRemovedbyAdmin($groupId, $adminId, $removedMessage, $lastMessageInGroup)
     if the user is an admin or a superadmin
         log // message, $removingUserId, group & id, neighbourhood & id
         if removed message is the last message in the group
